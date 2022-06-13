@@ -1,52 +1,26 @@
-var highScores = document.querySelector(".high-scores");
-var gameTimer = document.querySelector(".timer-count");
 var startButton = document.querySelector(".start-button");
+var timeEl = document.querySelector(".time");
+var secondsLeft = 75;
 
-var win = document.querySelector(".win");
-var lose = document.querySelector(".lose");
+function startTime() {
+  // Sets interval in variable
+  var timerInterval = setInterval(function() {
+    secondsLeft--;
+    timeEl.textContent = "Time: " + secondsLeft;
+    startButton.disabled = true;
 
-var scoreCounter;
-var timerCount;
-var timer;
-// var isWin = false;
+    if(secondsLeft === 0) {
+      clearInterval(timerInterval);
+      sendMessage();
+    }
 
-// Attach event listener to start button to call startGame function on click
-startButton.addEventListener("click", startGame);
-
-// START GAME FUNCTION
-function startGame() {
-    timerCount = 75;
-    // renderQuestion();
-    startTimer();
+  }, 1000);
 }
 
-// QUESTION PAGES
-function renderQuestion() {
-    var questionText = document.getElementsByClassName(".question");
-    var answerOneText = document.getElementsByClassName(".answer-button-1");
-    var answerTwoText = document.getElementsByClassName(".answer-button-2");
-    var answerThreeText = document.getElementsByClassName(".answer-button-3");
-    var answerFourText = document.getElementsByClassName(".answer-button-4");
-    var startButtonVisibility = document.getElementsByClassName(".start-button")
-
-    startButtonVisibility.style.display = "none";
-    questionText.textContent = "This is the first question in a series of questions?"
+// Function to create and append colorsplosion image
+function sendMessage() {
+  timeEl.textContent = " ";
+  window.alert("Times Up!");
 }
 
-// The setTimer function starts and stops the timer and triggers loseGame()
-function startTimer() {
-    // Sets timer
-    timer = setInterval(function() {
-      timerCount--;
-      gameTimer.textContent = timerCount;
-      // Tests if time has run out
-      if (timerCount === 0) {
-        // Clears interval
-        clearInterval(timer);
-        loseGame();
-      }
-    }, 1000);
-}
-
-
-
+startButton.addEventListener("click", startTime);
