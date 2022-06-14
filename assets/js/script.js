@@ -30,6 +30,7 @@ function renderQuestion1() {
     // Render the question
     document.getElementById("question").innerHTML = "What operator is used to assign a value to a declared variable?";
     document.getElementById("question").style.color = "black";
+    document.getElementById("question").style.textAlign = "center";
     document.getElementById("question").style.fontSize = "2.5rem";
     document.getElementById("question").style.lineHeight = "2.5rem";
     document.getElementById("question").style.paddingBottom = "2.5rem";
