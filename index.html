@@ -23,17 +23,17 @@
 
     </header>
 
-    <!-- Main bod elements -->
+    <!-- Main body elements -->
     <main>
         <!-- Heading - Will change to question text -->
         <div id="question">
             <h1>Coding Quiz Challenge</h1>
         </div>
         <!-- P copy will be removed in quiz mode -->
-        <p id="copyForFirstPage">Try to answer the following code-related questions within the time limit. <br>Keep in mind that incorrext answers will penalize your score/time by ten seconds!</p>
+        <p id="copyForFirstPage">Try to answer the following code-related questions within the 75 second time limit. <br> Every correct answer will award you 10 points.<br> Keep in mind that each incorrect answer will subtract 10 seconds from your time limit! <br> GOOD LUCK!</p>
         <button class = "start-button">Start Quiz</button>
         <!-- Start button will be replaced with 4 answer buttons -->
-        <div class="answerButtons">
+        <div id="answerButtons">
             <div id="answer-button-1"></div>
             <div id="answer-button-2"></div>
             <div id="answer-button-3"></div>
@@ -42,9 +42,10 @@
 
         <!-- Correct or incorrect diplayed for previous question -->
         <h2 id=previousResult>Correct!</h2>
-
-
     </main>
+    
+    <!-- Connect HTML to javascript doc -->
     <script src="./assets/js/script.js"></script>
+
 </body>
 </html>

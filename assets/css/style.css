@@ -74,12 +74,6 @@ button:hover {
 }
 
 h2 {
-    color: darkgray;
-    font-size: 1.6rem;
-    border-top: solid 2px darkgray;
-    font-weight: 500;
-    text-align: left;
-    padding-top: 10px;
     display: none;
 }
 
@@ -115,4 +109,14 @@ h2 {
 
 #answer-button-4:hover {
     background-color: #023f77;
+}
+
+#previousResult {
+    color: darkgray;
+    font-size: 1.6rem;
+    border-top: solid 2px darkgray;
+    font-weight: 500;
+    padding-top: 10px;
+    width: 100%;
+    text-align: center;
 }
