@@ -31,10 +31,10 @@ function startTimer() {
     gameTimer.textContent = "Time left: " + timerCount;
     startButton.disabled = true;
     // Tests if time has run out
-    if (timerCount === 0) {
+    if (timerCount <= 0) {
       // Clears interval
       clearInterval(timer);
-      // endGame();
+      endGame();
     }
   }, 1000);
 }
@@ -50,7 +50,7 @@ function renderQuestion1() {
   document.getElementById("question").style.color = "black";
   document.getElementById("question").style.textAlign = "center";
   document.getElementById("question").style.fontSize = "2.5rem";
-  document.getElementById("question").style.lineHeight = "2.5rem";
+  document.getElementById("question").style.lineHeight = "3rem";
   document.getElementById("question").style.paddingBottom = "2.5rem";
 
   // Render the answer buttons
@@ -69,21 +69,208 @@ function renderQuestion1() {
 
   var correctAnswer = document.getElementById("answer-button-1");
 
-  // ADD eventlistener to target
-
+  // ADD eventlistener to target for answerbuttons
   answerButtons.addEventListener("click", function(event) {
     answer = event.target;
+    event.stopPropagation();
     console.log(answer);
-
+  // If answer correct or incorrect
   if (answer == correctAnswer) {
     scoreCounter = scoreCounter + 10,
     console.log(scoreCounter),
     previousResult.style.display = "block",
-    previousResult.innerHTML = "Correct!";
+    previousResult.innerHTML = "Correct!",
+    renderQuestion2();
   } else if (answer != correctAnswer) {
     timerCount = timerCount -10,
     previousResult.style.display = "block",
-    previousResult.innerHTML = "Wrong!";
+    previousResult.innerHTML = "Wrong!",
+    renderQuestion2();
     };
   });
+}
+
+function renderQuestion2() { 
+  // Render the question
+  document.getElementById("question").innerHTML = "How do we declare a conditional statement in JavaScript?";
+  // Render the answer buttons
+  // Answer 1
+  document.getElementById("answer-button-1").innerHTML = "difference...between";
+  // Answer 2
+  document.getElementById("answer-button-2").innerHTML = "for loop";
+  // Answer 3
+  document.getElementById("answer-button-3").innerHTML = "if...else";
+  // Answer 4
+  document.getElementById("answer-button-4").innerHTML = "while loop";
+
+  correctAnswer2 = document.getElementById("answer-button-3");
+  
+  // ADD eventlistener to target for answerbuttons
+  answerButtons.addEventListener("click", function(event) {
+    answer = event.target;
+    event.stopPropagation();
+    console.log(answer);
+  // If answer correct or incorrect
+  if (answer == correctAnswer2) {
+    scoreCounter = scoreCounter + 10,
+    console.log(scoreCounter),
+    previousResult.style.display = "block",
+    previousResult.innerHTML = "Correct!",
+    renderQuestion3();
+  } else if (answer != correctAnswer2) {
+    timerCount = timerCount -10,
+    previousResult.style.display = "block",
+    previousResult.innerHTML = "Wrong!",
+    renderQuestion3();
+    };
+  });
+}
+
+function renderQuestion3() { 
+  // Render the question
+  document.getElementById("question").innerHTML = "From the given array which index is the letter 'b' on? ['a', 'b', 'c', 'd']";
+  // Render the answer buttons
+  // Answer 1
+  document.getElementById("answer-button-1").innerHTML = "0";
+  // Answer 2
+  document.getElementById("answer-button-2").innerHTML = "1";
+  // Answer 3
+  document.getElementById("answer-button-3").innerHTML = "2";
+  // Answer 4
+  document.getElementById("answer-button-4").innerHTML = "3";
+
+  correctAnswer = document.getElementById("answer-button-2");
+
+  // ADD eventlistener to target for answerbuttons
+  answerButtons.addEventListener("click", function(event) {
+    answer = event.target;
+    event.preventDefault();
+    console.log(answer);
+  // If answer correct or incorrect
+  if (answer === correctAnswer) {
+    scoreCounter = scoreCounter + 10,
+    console.log(scoreCounter),
+    previousResult.style.display = "block",
+    previousResult.innerHTML = "Correct!",
+    renderQuestion4();
+  } else if (answer !== correctAnswer) {
+    timerCount = timerCount -10,
+    previousResult.style.display = "block",
+    previousResult.innerHTML = "Wrong!",
+    renderQuestion4();
+    };
+  });
+}
+
+function renderQuestion4() { 
+  // Render the question
+  document.getElementById("question").innerHTML = "How do we stop a loop from from repeating indefinitely?";
+  // Render the answer buttons
+  // Answer 1
+  document.getElementById("answer-button-1").innerHTML = "When we have iterated through half of the condition.";
+  // Answer 2
+  document.getElementById("answer-button-2").innerHTML = "We have to explicitly end the loop with the break keyword.";
+  // Answer 3
+  document.getElementById("answer-button-3").innerHTML = "A loop will stop executing when the condition is true.";
+  // Answer 4
+  document.getElementById("answer-button-4").innerHTML = "A loop will stop executing when the condition is false.";
+
+  correctAnswer = document.getElementById("answer-button-4");
+
+  // ADD eventlistener to target for answerbuttons
+  answerButtons.addEventListener("click", function(event) {
+    answer = event.target;
+    event.preventDefault();
+    console.log(answer);
+  // If answer correct or incorrect
+  if (answer === correctAnswer) {
+    scoreCounter = scoreCounter + 10,
+    console.log(scoreCounter),
+    previousResult.style.display = "block",
+    previousResult.innerHTML = "Correct!",
+    renderQuestion5();
+  } else if (answer !== correctAnswer) {
+    timerCount = timerCount -10,
+    previousResult.style.display = "block",
+    previousResult.innerHTML = "Wrong!",
+    renderQuestion5();
+    };
+  });
+}
+
+function renderQuestion5() { 
+  // Render the question
+  document.getElementById("question").innerHTML = "What are the two types of scope JavaScript uses?";
+  // Render the answer buttons
+  // Answer 1
+  document.getElementById("answer-button-1").innerHTML = "Outside and Inside";
+  // Answer 2
+  document.getElementById("answer-button-2").innerHTML = "Global and Local";
+  // Answer 3
+  document.getElementById("answer-button-3").innerHTML = "Surrounding and Inner";
+  // Answer 4
+  document.getElementById("answer-button-4").innerHTML = "Abroad and Local";
+
+  correctAnswer = document.getElementById("answer-button-2");
+
+  // ADD eventlistener to target for answerbuttons
+  answerButtons.addEventListener("click", function(event) {
+    answer = event.target;
+    event.preventDefault();
+    console.log(answer);
+  // If answer correct or incorrect
+  if (answer === correctAnswer) {
+    scoreCounter = scoreCounter + 10,
+    console.log(scoreCounter),
+    previousResult.style.display = "block",
+    previousResult.innerHTML = "Correct!",
+    renderQuestion6();
+  } else if (answer !== correctAnswer) {
+    timerCount = timerCount -10,
+    previousResult.style.display = "block",
+    previousResult.innerHTML = "Wrong!",
+    renderQuestion6();
+    };
+  });
+}
+
+function renderQuestion5() { 
+  // Render the question
+  document.getElementById("question").innerHTML = "What is an object method?";
+  // Render the answer buttons
+  // Answer 1
+  document.getElementById("answer-button-1").innerHTML = "An array saved inside of an object";
+  // Answer 2
+  document.getElementById("answer-button-2").innerHTML = "A function that takes an object for an argument";
+  // Answer 3
+  document.getElementById("answer-button-3").innerHTML = "Keys in an object that have a number assigned to it";
+  // Answer 4
+  document.getElementById("answer-button-4").innerHTML = "A function associated with an object";
+
+  correctAnswer = document.getElementById("answer-button-4");
+
+  // ADD eventlistener to target for answerbuttons
+  answerButtons.addEventListener("click", function(event) {
+    answer = event.target;
+    event.preventDefault();
+    console.log(answer);
+  // If answer correct or incorrect
+  if (answer === correctAnswer) {
+    scoreCounter = scoreCounter + 10,
+    console.log(scoreCounter),
+    previousResult.style.display = "block",
+    previousResult.innerHTML = "Correct!",
+    endGame();
+  } else if (answer !== correctAnswer) {
+    timerCount = timerCount -10,
+    previousResult.style.display = "block",
+    previousResult.innerHTML = "Wrong!",
+    endGame();
+    };
+  });
+}
+
+// END GAME SCREEN
+function endGame() {
+  window.alert("Your time is up!")
 }
