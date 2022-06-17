@@ -4,17 +4,18 @@ var startButton = document.querySelector(".start-button");
 var pText = document.getElementById("copyForFirstPage");
 var answerButtons = document.getElementById("answerButtons");
 var previousResult = document.getElementById("previousResult");
+var answerButton1 = document.getElementById("answer-button-1");
+var answerButton2 = document.getElementById("answer-button-2");
+var answerButton3 = document.getElementById("answer-button-3");
+var answerButton4 = document.getElementById("answer-button-4");
 
-// var win = document.querySelector(".win");
-// var lose = document.querySelector(".lose");
 
 var scoreCounter = 0;
 var timerCount;
 var timer;
-// var isWin = false;
 
-// Attach event listener to start button to call startGame function on click
-startButton.addEventListener("click", startGame);
+
+
 
 // START GAME FUNCTION
 function startGame() {
@@ -34,7 +35,7 @@ function startTimer() {
     if (timerCount <= 0) {
       // Clears interval
       clearInterval(timer);
-      endGame();
+      // endGame();
     }
   }, 1000);
 }
@@ -44,6 +45,7 @@ function renderQuestion1() {
   // Hide the start button and P text
   startButton.style.display = "none";
   pText.style.display = "none";
+  previousResult.style.display = "none",
       
   // Render the question
   document.getElementById("question").innerHTML = "What operator is used to assign a value to a declare variable?";
@@ -65,29 +67,18 @@ function renderQuestion1() {
   document.getElementById("answer-button-3").innerHTML = "Double-equal (==)";
   // Answer 4
   document.getElementById("answer-button-4").style.display = "flex";
-  document.getElementById("answer-button-4").innerHTML = "Colon (:)";
+  document.getElementById("answer-button-4").innerHTML = "Colon (:)"; 
 
   var correctAnswer = document.getElementById("answer-button-1");
+  var answer = userAnswer;
 
-  // ADD eventlistener to target for answerbuttons
-  answerButtons.addEventListener("click", function(event) {
-    answer = event.target;
-    event.stopPropagation();
-    console.log(answer);
-  // If answer correct or incorrect
-  if (answer == correctAnswer) {
-    scoreCounter = scoreCounter + 10,
-    console.log(scoreCounter),
-    previousResult.style.display = "block",
-    previousResult.innerHTML = "Correct!",
-    renderQuestion2();
-  } else if (answer != correctAnswer) {
-    timerCount = timerCount -10,
-    previousResult.style.display = "block",
-    previousResult.innerHTML = "Wrong!",
-    renderQuestion2();
-    };
-  });
+  // if (answer == correctAnswer){
+  //   correctAnswer();
+  //   renderQuestion2();
+  // } else { 
+  //   wrongAnswer()
+  //   renderQuestion2();
+  // };
 }
 
 function renderQuestion2() { 
@@ -101,29 +92,9 @@ function renderQuestion2() {
   // Answer 3
   document.getElementById("answer-button-3").innerHTML = "if...else";
   // Answer 4
-  document.getElementById("answer-button-4").innerHTML = "while loop";
+  document.getElementById("answer-button-4").innerHTML = "while loop"; 
 
-  correctAnswer2 = document.getElementById("answer-button-3");
-  
-  // ADD eventlistener to target for answerbuttons
-  answerButtons.addEventListener("click", function(event) {
-    answer = event.target;
-    event.stopPropagation();
-    console.log(answer);
-  // If answer correct or incorrect
-  if (answer == correctAnswer2) {
-    scoreCounter = scoreCounter + 10,
-    console.log(scoreCounter),
-    previousResult.style.display = "block",
-    previousResult.innerHTML = "Correct!",
-    renderQuestion3();
-  } else if (answer != correctAnswer2) {
-    timerCount = timerCount -10,
-    previousResult.style.display = "block",
-    previousResult.innerHTML = "Wrong!",
-    renderQuestion3();
-    };
-  });
+  var correctAnswer = document.getElementById("answer-button-3");
 }
 
 function renderQuestion3() { 
@@ -139,27 +110,7 @@ function renderQuestion3() {
   // Answer 4
   document.getElementById("answer-button-4").innerHTML = "3";
 
-  correctAnswer = document.getElementById("answer-button-2");
-
-  // ADD eventlistener to target for answerbuttons
-  answerButtons.addEventListener("click", function(event) {
-    answer = event.target;
-    event.preventDefault();
-    console.log(answer);
-  // If answer correct or incorrect
-  if (answer === correctAnswer) {
-    scoreCounter = scoreCounter + 10,
-    console.log(scoreCounter),
-    previousResult.style.display = "block",
-    previousResult.innerHTML = "Correct!",
-    renderQuestion4();
-  } else if (answer !== correctAnswer) {
-    timerCount = timerCount -10,
-    previousResult.style.display = "block",
-    previousResult.innerHTML = "Wrong!",
-    renderQuestion4();
-    };
-  });
+  var correctAnswer = document.getElementById("answer-button-2");
 }
 
 function renderQuestion4() { 
@@ -175,27 +126,7 @@ function renderQuestion4() {
   // Answer 4
   document.getElementById("answer-button-4").innerHTML = "A loop will stop executing when the condition is false.";
 
-  correctAnswer = document.getElementById("answer-button-4");
-
-  // ADD eventlistener to target for answerbuttons
-  answerButtons.addEventListener("click", function(event) {
-    answer = event.target;
-    event.preventDefault();
-    console.log(answer);
-  // If answer correct or incorrect
-  if (answer === correctAnswer) {
-    scoreCounter = scoreCounter + 10,
-    console.log(scoreCounter),
-    previousResult.style.display = "block",
-    previousResult.innerHTML = "Correct!",
-    renderQuestion5();
-  } else if (answer !== correctAnswer) {
-    timerCount = timerCount -10,
-    previousResult.style.display = "block",
-    previousResult.innerHTML = "Wrong!",
-    renderQuestion5();
-    };
-  });
+  var correctAnswer = document.getElementById("answer-button-4");
 }
 
 function renderQuestion5() { 
@@ -211,30 +142,10 @@ function renderQuestion5() {
   // Answer 4
   document.getElementById("answer-button-4").innerHTML = "Abroad and Local";
 
-  correctAnswer = document.getElementById("answer-button-2");
-
-  // ADD eventlistener to target for answerbuttons
-  answerButtons.addEventListener("click", function(event) {
-    answer = event.target;
-    event.preventDefault();
-    console.log(answer);
-  // If answer correct or incorrect
-  if (answer === correctAnswer) {
-    scoreCounter = scoreCounter + 10,
-    console.log(scoreCounter),
-    previousResult.style.display = "block",
-    previousResult.innerHTML = "Correct!",
-    renderQuestion6();
-  } else if (answer !== correctAnswer) {
-    timerCount = timerCount -10,
-    previousResult.style.display = "block",
-    previousResult.innerHTML = "Wrong!",
-    renderQuestion6();
-    };
-  });
+  var correctAnswer = document.getElementById("answer-button-2");
 }
 
-function renderQuestion5() { 
+function renderQuestion6() { 
   // Render the question
   document.getElementById("question").innerHTML = "What is an object method?";
   // Render the answer buttons
@@ -247,28 +158,48 @@ function renderQuestion5() {
   // Answer 4
   document.getElementById("answer-button-4").innerHTML = "A function associated with an object";
 
-  correctAnswer = document.getElementById("answer-button-4");
-
-  // ADD eventlistener to target for answerbuttons
-  answerButtons.addEventListener("click", function(event) {
-    answer = event.target;
-    event.preventDefault();
-    console.log(answer);
-  // If answer correct or incorrect
-  if (answer === correctAnswer) {
-    scoreCounter = scoreCounter + 10,
-    console.log(scoreCounter),
-    previousResult.style.display = "block",
-    previousResult.innerHTML = "Correct!",
-    endGame();
-  } else if (answer !== correctAnswer) {
-    timerCount = timerCount -10,
-    previousResult.style.display = "block",
-    previousResult.innerHTML = "Wrong!",
-    endGame();
-    };
-  });
+  var correctAnswer = document.getElementById("answer-button-4");
 }
+
+// FUNCTION FOR CORRECT ANSWERS
+function correctAnswer() {
+  scoreCounter = scoreCounter + 10,
+  console.log(scoreCounter),
+  previousResult.style.display = "block",
+  previousResult.innerHTML = "Correct!";
+}
+
+// FUNCTION FOR INCORRECT ANSWERS
+function wrongAnswer () {
+  timerCount = timerCount -10,
+  previousResult.style.display = "block",
+  previousResult.innerHTML = "Wrong!";
+}
+
+// Eventlistener for answerbuttons
+answerButton1.addEventListener("click", answer);
+console.log(answer)
+answerButton2.addEventListener("click", userAnswer);
+answerButton3.addEventListener("click", userAnswer);
+answerButton4.addEventListener("click", userAnswer);
+
+var answer = [""]
+function userAnswer () {
+
+}
+// answerButtons.addEventListener("click", function(event) {
+//   answer = event.target;
+//   event.stopPropagation();
+//   event.preventDefault();
+//   console.log(answer);
+// });
+
+// var userAnswer = ("");
+// console.log(userAnswer);
+
+// Attach event listener to start button to call startGame function on click
+startButton.addEventListener("click", startGame);
+
 
 // END GAME SCREEN
 function endGame() {

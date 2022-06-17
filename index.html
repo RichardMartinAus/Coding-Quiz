@@ -16,34 +16,76 @@
 <body>
     <!-- Header elements -->
     <header>
-        <p><a href="#" class="high-scores">View high scores</a></p>
+        <p id="high-score-btn">View high scores</p>
         
-        <p class="time"></p>
-        
-
+        <p id="timer">75 seconds left</p>
     </header>
 
     <!-- Main body elements -->
     <main>
-        <!-- Heading - Will change to question text -->
-        <div id="question">
-            <h1>Coding Quiz Challenge</h1>
-        </div>
-        <!-- P copy will be removed in quiz mode -->
-        <p id="copyForFirstPage">Try to answer the following code-related questions within the 75 second time limit. <br> Every correct answer will award you 10 points.<br> Keep in mind that each incorrect answer will subtract 10 seconds from your time limit! <br> GOOD LUCK!</p>
-        <button class = "start-button">Start Quiz</button>
-        <!-- Start button will be replaced with 4 answer buttons -->
-        <div id="answerButtons">
-            <div id="answer-button-1"></div>
-            <div id="answer-button-2"></div>
-            <div id="answer-button-3"></div>
-            <div id="answer-button-4"></div>
-        </div>
+        <div class="container">
+            <!-- Start of quiz screen -->
+            <div class="heading">
+                    <h1>Coding Quiz Challenge</h1>
+                </div>
 
-        <!-- Correct or incorrect diplayed for previous question -->
-        <h2 id=previousResult>Correct!</h2>
+            <p id="start-page-text">Try to answer the following javaScript related questions within the 75 second time limit. Every correct answer will award you 10 points. Keep in mind that each incorrect answer will subtract 10 seconds from your time and 5 points from your total score! <br> <br> <span class="bold-text">GOOD LUCK!</span></p>
+
+            <button id="start-button" class="btn">Start Quiz</button>
+
+
+            <!-- Questions and answers page -->
+            <div id="question-text" class="question-text-style hide"><h1>This text will be the question?</h1></div>
+
+            <div id="answerButtons">
+                <button id="answer-button-4" class="btn hide">Answer 1</button>
+                <button id="answer-button-4" class="btn hide">Answer 2</button>
+                <button id="answer-button-4" class="btn hide">Answer 3</button>
+                <button id="answer-button-4" class="btn hide">Answer 4</button>
+            </div>
+            <!-- Correct or incorrect diplayed for previous question -->
+            <h2 id=previousResult class="hide">Correct!</h2>
+
+
+            <!-- End of quiz screen -->
+            <div class="hide">
+                <p id="score-text"><span class="bold-text">The End!</span> <br> You have scored: </p>
+                <label for="name"><h3>Enter your name:</h3></label><input type="text" name="name" id="name" >
+                <input type="submit" value="Submit" class="btn">
+            </div>
+
+
+            <!-- Highscore screen -->
+            <div class="hide">
+                <h1>Highscores</h1>
+                <table style="width:100%">
+                    <tr>
+                        <th>Name</th>
+                        <th>Score</th>
+                    </tr>
+                    <tr>
+                        <td>Richard</td>
+                        <td>60</td>
+                    </tr>
+                    <tr>
+                        <td>Rich</td>
+                        <td>50</td>
+                    </tr>
+                    <tr>
+                        <td>Richard M</td>
+                        <td>45</td>
+                    </tr>
+                </table>
+
+                <button id="backButton" class="btn">Back</button>
+                <button id="clearButton" class="btn">Clear</button>
+            </div>
+        </div>
     </main>
     
+
+
+
     <!-- Connect HTML to javascript doc -->
     <script src="./assets/js/script.js"></script>
 

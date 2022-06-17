@@ -1,27 +1,36 @@
 * {
     font-family: 'Roboto', sans-serif;
-    color: white;
+
 }
+
+:root {
+    --darkerBlue: #00101f;
+    --darkBlue: #001C39;
+    --lightDarkBlue: #01498d;
+    --lightBlue: #rgb(191, 255, 252);
+}
+
 html {
     height: 100%;
 }
 
 body {
-    background-image: linear-gradient(#00162B, #001C39);
+    background-image: linear-gradient(var(--darkerBlue), var(--darkBlue));
 }
 
 h1 {
     font-size: 2.5rem;
 }
 
+h3 {
+    color: black;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
 p {
     font-weight: 300;
     font-size: 1.2rem;
-}
-
-a {
-    text-decoration: none;
-    color: rgb(191, 255, 252);
 }
 
 header {
@@ -31,21 +40,23 @@ header {
     padding-left: 30px;
     padding-right: 30px;
     margin-bottom: 30px;
+    color: white;
 }
 
-main {
+.container {
     background-color: white;
     max-width: 800px;
     min-height: 500px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     margin-right: auto;
     margin-left: auto;
     padding: 60px;
     border: solid 2px darkgray;
     border-radius: 10px;
-    line-height: 2rem;
+    line-height: 2.1rem;
 }
 
 main p, h1 {
@@ -53,31 +64,13 @@ main p, h1 {
     text-align: center;
 }
 
-.start-button {
-    color: white;
-    background-color: #00162B;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 1.4rem;
-    font-weight: 300;
-    margin: 30px;
-    border: none;
-    cursor: pointer;
+.bold-text {
+    color: black;
+    font-size: 2rem;
+    font-weight: bold;
 }
 
-button:hover {
-    background-color: #023f77;
-}
-
-#answer-button-1, #answer-button-2, #answer-button-3, #answer-button-4 {
-    display: none;
-}
-
-h2 {
-    display: none;
-}
-
-#answer-button-1, #answer-button-2, #answer-button-3, #answer-button-4 {
+.btn {
     color: white;
     background-color: #00162B;
     border-radius: 5px;
@@ -89,26 +82,13 @@ h2 {
     cursor: pointer;
 }
 
-.answerButtons {
+button:hover {
+    background-color: #01498d;
+}
+
+#answerButtons {
     display: flex;
     flex-direction: column;
-    align-items: left;
-}
-
-#answer-button-1:hover {
-    background-color: #023f77;
-}
-
-#answer-button-2:hover {
-    background-color: #023f77;
-}
-
-#answer-button-3:hover {
-    background-color: #023f77;
-}
-
-#answer-button-4:hover {
-    background-color: #023f77;
 }
 
 #previousResult {
@@ -119,4 +99,21 @@ h2 {
     padding-top: 10px;
     width: 100%;
     text-align: center;
+}
+
+th {
+    text-align: left;
+    font-size: 1.5rem;
+}
+
+th, td {
+    padding: 5px;
+}
+
+tr:nth-child(even) {
+    background-color: #D6EEEE;
+}
+
+.hide {
+    display: none;
 }
