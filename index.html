@@ -16,47 +16,50 @@
 <body>
     <!-- Header elements -->
     <header>
-        <p id="high-score-btn">View high scores</p>
+        <a>
+            <p id="high-score-btn">View high scores</p>
+        </a>
         
         <p id="timer">75 seconds left</p>
     </header>
 
     <!-- Main body elements -->
     <main>
-        <div class="container">
+        <div class="quiz-container">
+            
             <!-- Start of quiz screen -->
-            <div class="heading">
-                    <h1>Coding Quiz Challenge</h1>
-                </div>
-
-            <p id="start-page-text">Try to answer the following javaScript related questions within the 75 second time limit. Every correct answer will award you 10 points. Keep in mind that each incorrect answer will subtract 10 seconds from your time and 5 points from your total score! <br> <br> <span class="bold-text">GOOD LUCK!</span></p>
-
-            <button id="start-button" class="btn">Start Quiz</button>
+            <div id="start-screen">
+                <h1>Coding Quiz Challenge</h1>
+                    
+                <p id="start-page-text">Try to answer the following javaScript related questions within the 75 second time limit. Every correct answer will award you 10 points. Keep in mind that each incorrect answer will subtract 10 seconds from your time and 5 points from your total score! <br> <br> <span class="bold-text">GOOD LUCK!</span></p>
+                <button id="start-button" class="btn">Start Quiz</button>
+            </div>
 
 
             <!-- Questions and answers page -->
-            <div id="question-text" class="question-text-style hide"><h1>This text will be the question?</h1></div>
-
-            <div id="answerButtons">
-                <button id="answer-button-4" class="btn hide">Answer 1</button>
-                <button id="answer-button-4" class="btn hide">Answer 2</button>
-                <button id="answer-button-4" class="btn hide">Answer 3</button>
-                <button id="answer-button-4" class="btn hide">Answer 4</button>
+            <div id="question-screen" class="hide">
+                <div id="question" class="question-text-style"><h1>This text will be the question?</h1></div>
+                <div id="answerButtons">
+                    <button id="answers-1" class="btn">Answer 1</button>
+                    <button id="answers-2" class="btn">Answer 1</button>
+                    <button id="answers-3" class="btn">Answer 1</button>
+                    <button id="answers-4" class="btn">Answer 1</button>
+                </div>
+                <!-- Correct or incorrect diplayed for previous question -->
+                <h2 id="previousResult" class="hide"></h2>
             </div>
-            <!-- Correct or incorrect diplayed for previous question -->
-            <h2 id=previousResult class="hide">Correct!</h2>
 
 
             <!-- End of quiz screen -->
-            <div class="hide">
-                <p id="score-text"><span class="bold-text">The End!</span> <br> You have scored: </p>
+            <div id="end-screen" class="hide">
+                <p><span class="bold-text">The End!</span> <br><span id="score-text"> You have scored: </span></p><br>
                 <label for="name"><h3>Enter your name:</h3></label><input type="text" name="name" id="name" >
-                <input type="submit" value="Submit" class="btn">
+                    <input type="submit" value="Submit" class="btn2" id="submit-button">
             </div>
 
 
             <!-- Highscore screen -->
-            <div class="hide">
+            <div id="high-score-page" class="hide">
                 <h1>Highscores</h1>
                 <table style="width:100%">
                     <tr>
@@ -67,18 +70,10 @@
                         <td>Richard</td>
                         <td>60</td>
                     </tr>
-                    <tr>
-                        <td>Rich</td>
-                        <td>50</td>
-                    </tr>
-                    <tr>
-                        <td>Richard M</td>
-                        <td>45</td>
-                    </tr>
                 </table>
 
-                <button id="backButton" class="btn">Back</button>
-                <button id="clearButton" class="btn">Clear</button>
+                <button id="backButton" class="btn2">Back</button>
+                <button id="clearButton" class="btn2">Clear</button>
             </div>
         </div>
     </main>

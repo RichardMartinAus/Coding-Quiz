@@ -1,13 +1,13 @@
-* {
-    font-family: 'Roboto', sans-serif;
-
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
 }
 
 :root {
     --darkerBlue: #00101f;
     --darkBlue: #001C39;
     --lightDarkBlue: #01498d;
-    --lightBlue: #rgb(191, 255, 252);
+    --lightBlue: rgb(191, 255, 252);
 }
 
 html {
@@ -33,6 +33,11 @@ p {
     font-size: 1.2rem;
 }
 
+a {
+    text-decoration: none;
+    color: var(--lightBlue);
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -43,7 +48,7 @@ header {
     color: white;
 }
 
-.container {
+.quiz-container {
     background-color: white;
     max-width: 800px;
     min-height: 500px;
@@ -59,6 +64,10 @@ header {
     line-height: 2.1rem;
 }
 
+#start-screen {
+    text-align: center;
+}
+
 main p, h1 {
     color: black;
     text-align: center;
@@ -70,9 +79,16 @@ main p, h1 {
     font-weight: bold;
 }
 
+.question-text-style {
+    font-size: 2rem;
+    line-height: 2rem;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
 .btn {
     color: white;
-    background-color: #00162B;
+    background-color: var(--darkBlue);
     border-radius: 5px;
     padding: 10px 20px;
     font-size: 1.4rem;
@@ -83,7 +99,24 @@ main p, h1 {
 }
 
 button:hover {
-    background-color: #01498d;
+    background-color: var(--lightDarkBlue);
+}
+
+.btn2 {
+    color: white;
+    background-color: var(--darkBlue);
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: 300;
+    border: none;
+    cursor: pointer;
+}
+
+.btn2:hover {
+    background-color: var(--lightDarkBlue);
 }
 
 #answerButtons {
@@ -111,7 +144,16 @@ th, td {
 }
 
 tr:nth-child(even) {
-    background-color: #D6EEEE;
+    background-color: var(--lightBlue);
+}
+
+input {
+    padding: 4px;
+    margin-right: 10px;
+}
+
+#high-score-btn {
+    cursor: pointer;
 }
 
 .hide {
