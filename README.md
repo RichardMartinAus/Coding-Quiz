@@ -16,7 +16,7 @@ When the user clicks the start button they are presented with a series of javaSc
 
 View the depolyed application here:
 
-Below are some screenshots of deployed application:
+Below are some screenshots of deployed application: https://richardmartinaus.github.io/Coding-Quiz/
 
 ![Screenshot of coding quiz start screen](assets/images/screenshot04.png?raw=true)
 
