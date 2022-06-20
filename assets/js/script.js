@@ -14,11 +14,11 @@ var finalScore = document.getElementById("score-text");
 var highScoreScreen = document.getElementById("high-score-btn");
 var submitButton = document.getElementById("submit-button");
 var highScorePage = document.getElementById("high-score-page");
-
+var backButton = document.getElementById("backButton");
 
 // Variables for score and timer
-var scoreCounterTotal = [];
-var userScore = 0;
+var scoreCounterTotal;
+var scoreCount = 0;
 var timerCount;
 var timer;
 
@@ -298,7 +298,7 @@ function renderQuestion8() {
 }
 
 function correctAnswer() {
-    userScore + 10;
+    scoreCounterTotal = scoreCount +10;
     console.log(scoreCounterTotal);
     previousResult.classList.remove("hide");
     previousResult.innerHTML = "Correct!";
@@ -306,8 +306,6 @@ function correctAnswer() {
 
 function wrongAnswer() {
     timerCount = timerCount -10;
-    userScore -5;
-    console.log(scoreCounterTotal);
     previousResult.classList.remove("hide");
     previousResult.innerHTML = "Wrong!";
 }
@@ -317,7 +315,6 @@ function wrongAnswer() {
 function endGame() {
     questionScreen.classList.add("hide");
     endScreen.classList.remove("hide");
-    scoreCounterTotal = userScore;
     finalScore.innerHTML = "You have scored: " + scoreCounterTotal
     
     // Submit button for name and score
@@ -344,7 +341,23 @@ highScoreScreen.addEventListener("click", highScores);
 function highScores() {
     startScreen.classList.add("hide");
     endScreen.classList.add("hide");
+    questionScreen.classList.add("hide");
     highScorePage.classList.remove("hide");
+
+    backButton.addEventListener("click", homePage);
+
 }
 
+function homePage() {
+    highScorePage.classList.add("hide");
+    startScreen.classList.remove("hide");
+    clearInterval(timer);
+    init ();
+}
 
+function init() {
+    startScreen.classList.remove("hide");
+    startButton.addEventListener("click", startGame);
+}
+
+init();
